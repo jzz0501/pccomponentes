@@ -23,7 +23,7 @@ export default function Basket() {
     }
 
     return (
-        <div className="w-[160px]">
+        <div>
             <TextIconButton text="Basket" imageURL="/svg/basket.svg" onClickEvent={onClickBasket}/>         
         </div>
     )

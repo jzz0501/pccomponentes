@@ -23,7 +23,7 @@ export default function Category() {
     }
 
     return (
-        <div className="text-nowrap w-[300px]">
+        <div className="text-nowrap">
             <TextIconButton imageURL="/svg/menu.svg" text="Todas las categorias" onClickEvent={onClickCategory}/>
         </div>
     )

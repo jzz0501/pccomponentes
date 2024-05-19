@@ -23,7 +23,7 @@ export default function Account() {
     }
 
     return (
-        <div className="w-[160px]">
+        <div>
             <TextIconButton text="Account" imageURL="/svg/user.svg" onClickEvent={onClickAccount}/>         
         </div>
     )

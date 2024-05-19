@@ -45,8 +45,6 @@ export default function SearchBar() {
                     <></>
                 </div>
             }
-            
         </div>
-        
     )
 }
