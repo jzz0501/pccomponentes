@@ -1,6 +1,6 @@
 "use client"
 
-import CloseButton from "@/components/atoms/button/close/CloseButton";
+import PrimaryButton, { PrimaryButtonShape } from "@/components/atoms/button/primary/PrimaryButton"
 
 export default function AccountSideBar() {
 
@@ -25,7 +25,9 @@ export default function AccountSideBar() {
 
     return (
         <div className="h-screen bg-white w-[400px] border-[0.5px]">
-            <CloseButton onClickEvent={onClickClose}/>
+            <PrimaryButton onClickEvent={onClickClose} shape={PrimaryButtonShape.MEDIUM_SQUARE}>
+                x
+            </PrimaryButton>
         </div>
     )
 }

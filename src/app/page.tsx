@@ -1,7 +1,4 @@
-import MultiCarousel from "@/components/organisms/carousel/multi/MultiCarousel";
-import ProductCarousel from "@/components/organisms/carousel/product/ProductCarousel";
-import Cover from "@/components/organisms/cover/Cover";
-import ModuleList from "@/components/organisms/list/module/ModuleList";
+import HomeTemplate from "@/components/templates/home/HomeTemplate";
 
 export default function Home() {
 
@@ -53,11 +50,8 @@ export default function Home() {
   ]
 
   return (
-    <div className="space-y-[50px]">
-      <Cover/>
-      <ProductCarousel carouselTitle="Ofertas destacadas de la semana" productList={productList}/>
-      <ModuleList moduleList={moduleList}/>
-      <MultiCarousel carousels={multiList}/>
+    <div>
+      <HomeTemplate />
     </div>
   );
 }

@@ -3,7 +3,7 @@
 import Image from "next/image";
 
 import TitleText from "@/components/atoms/text/title/TitleText";
-import ProductCarousel from "../product/ProductCarousel";
+import ProductCarousel from "../single/SingleCarousel";
 import SecondaryButton from "@/components/atoms/button/secondary/SecondaryButton";
 import SubtitleText from "@/components/atoms/text/subtitle/SubtitleText";
 
@@ -25,10 +25,10 @@ export default function MultiCarousel({carousels}: {carousels: {title: string, p
             </div>
             
             <div className="flex flex-col overflow-hidden space-y-[12px]">
-                <ul className="flex space-x-[20px]">
+                <ul className="flex space-x-[20px] overflow-hidden">
                     {
                         carousels.map((carousel, index) => {
-                            return <li key={index}><button onClick={() => setProductList(carousel.productList)}><SubtitleText text={carousel.title}/></button></li>
+                            return <li key={index}><button className="text-nowrap" onClick={() => setProductList(carousel.productList)}><SubtitleText text={carousel.title}/></button></li>
                         })
                     }
                 </ul>

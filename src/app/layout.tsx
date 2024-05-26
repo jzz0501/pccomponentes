@@ -1,12 +1,7 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import AppBar from "@/components/organisms/appbar/AppBar";
-import CategorySideBar from "@/components/organisms/sidebar/category/CategorySideBar";
-import BasketSideBar from "@/components/organisms/sidebar/basket/BasketSideBar";
-import AccountSideBar from "@/components/organisms/sidebar/account/AccountSideBar";
-import NavBar from "@/components/organisms/navbar/NavBar";
-import BarTemplate from "@/components/templates/bar/BarTemplate";
+import FixedBarTemplate from "@/components/templates/fixed-bar/FixedBarTemplate";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -23,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
-        <BarTemplate/>
+        <FixedBarTemplate/>
         <div id="main" className="px-[2%] max-w-[1700px] mx-auto">
           {children}
         </div>

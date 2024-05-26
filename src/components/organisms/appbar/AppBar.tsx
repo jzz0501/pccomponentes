@@ -1,8 +1,8 @@
 import Logo from "@/components/atoms/logo/Logo";
-import Account from "@/components/molecules/account/Account";
-import Basket from "@/components/molecules/basket/Basket";
-import Category from "@/components/molecules/category/Category";
-import SearchBar from "@/components/molecules/search-bar/SearchBar";
+import AccountMenu from "@/components/molecules/menu/account/AccountMenu";
+import BasketMenu from "@/components/molecules/menu/basket/BasketMenu";
+import CategoryMenu from "@/components/molecules/menu/category/CategoryMenu";
+import SearchBarMenu from "@/components/molecules/menu/search-bar/SearchBarMenu";
 
 export default function AppBar() {
 
@@ -12,14 +12,14 @@ export default function AppBar() {
                 <Logo/>
             </div>
             <div className="flex-none">
-                <Category/>
+                <CategoryMenu/>
             </div>
-            <SearchBar/>
+            <SearchBarMenu/>
             <div className="flex-none">
-                <Account/>
+                <AccountMenu/>
             </div>
             <div className="flex-none">
-                <Basket/>
+                <BasketMenu/>
             </div>
         </div>
     )
