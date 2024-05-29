@@ -2,16 +2,22 @@
 
 import Image from "next/image";
 
-import TitleText from "@/components/atoms/text/title/TitleText";
-import ProductCarousel from "../single/SingleCarousel";
 import SecondaryButton from "@/components/atoms/button/secondary/SecondaryButton";
-import SubtitleText from "@/components/atoms/text/subtitle/SubtitleText";
 
 import { useState } from "react";
+import Text, { TextSize } from "@/components/atoms/text/Text";
+import SingleCarousel from "../single/SingleCarousel";
+import ProductCardData from "@/model/ProductCard";
 
-export default function MultiCarousel({carousels}: {carousels: {title: string, productList: {id: number, name: string, imageURL: string, price: number, discount: number, score: number, comment_num: number, promocion: boolean, trending: boolean, recommend: boolean}[]}[]}) {
+type MultiCarouselProperty = {
+    carousels: {carouselTitle: string, productCards: ProductCardData[]}[]
+}
 
-    const [productList, setProductList] = useState(carousels[0].productList)
+export default function MultiCarousel(property: MultiCarouselProperty) {
+
+    const {carousels} = property
+
+    const [productList, setProductList] = useState(carousels[0].productCards)
 
     return (
         <div className="flex max-lg:flex-col lg:space-x-[70px] max-lg:space-y-[20px] p-[40px] bg-gray-200">
@@ -19,20 +25,28 @@ export default function MultiCarousel({carousels}: {carousels: {title: string, p
             <div className="flex max-lg:space-x-[40px] lg:flex-col lg:flex-none space-y-[12px] lg:w-[312px]">
                 <div className="flex flex-col space-y-[10px]">
                     <Image className="h-[40px] w-[312px]" src="/img/seleccion-top.png" alt="" sizes="100vw" height={0} width={0} priority/>
-                    <TitleText text="En la Semana de Internet conecta con los productos más top a un precio inmejorable"/>
+                    <Text text="En la Semana de Internet conecta con los productos más top a un precio inmejorable" size={TextSize.MEDIUM}/>
                 </div>
-                <div className="text-nowrap"><SecondaryButton onClickEvent={() => {}}>Ver mas</SecondaryButton></div>
+                <div className="text-nowrap">
+                    <SecondaryButton onClickEvent={() => {}}>Ver mas</SecondaryButton>
+                </div>
             </div>
             
             <div className="flex flex-col overflow-hidden space-y-[12px]">
                 <ul className="flex space-x-[20px] overflow-hidden">
                     {
                         carousels.map((carousel, index) => {
-                            return <li key={index}><button className="text-nowrap" onClick={() => setProductList(carousel.productList)}><SubtitleText text={carousel.title}/></button></li>
+                            return (
+                                <li key={index}>
+                                    <button className="text-nowrap" onClick={() => setProductList(carousel.productCards)}>
+                                        <Text text={carousel.carouselTitle} size={TextSize.MEDIUM}/>
+                                    </button>
+                                </li>
+                            )
                         })
                     }
                 </ul>
-                <ProductCarousel carouselTitle="" productList={productList}/>
+                <SingleCarousel carouselTitle="" productCards={productList}/>
             </div>
 
         </div>

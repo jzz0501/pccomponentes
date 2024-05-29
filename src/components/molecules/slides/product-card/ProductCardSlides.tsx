@@ -11,7 +11,7 @@ export default function ProductCardSlides(property: ProductCardSlidesProperty) {
     const {id_slides, productCards} = property
 
     return (
-        <ul id={id_slides} className="whitespace-nowrap overflow-hidden space-x-[20px]">
+        <ul id={id_slides} className="whitespace-nowrap overflow-hidden space-x-[30px]">
             {
                 productCards.map((productCard) => {
                     return (

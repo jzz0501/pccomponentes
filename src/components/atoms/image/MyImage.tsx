@@ -33,5 +33,5 @@ export default function MyImage(property: MyImagePropety) {
 
     const {imageURL, padding, border, size, rounded} = property
 
-    return <Image className={`${padding} ${border} ${size} ${rounded}`} src={imageURL} alt="" height={0} width={0} sizes="100vw" draggable={false} priority/>
+    return <Image className={`${padding} ${border} ${size} ${rounded} object-cover`} src={imageURL} alt="" height={0} width={0} sizes="100vw" draggable={false} priority/>
 }

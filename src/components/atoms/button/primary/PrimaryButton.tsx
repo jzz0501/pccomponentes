@@ -14,7 +14,8 @@ export enum PrimaryButtonRounded {
     SMALL = "rounded-sm"
 }
 
-export enum PrimaryButtonShape {
+export enum PrimaryButtonSize {
+    WRAP_CONTENT = "h-full w-full",
     MEDIUM_SQUARE = "h-[50px] w-[50px]"
 }
 
@@ -24,15 +25,15 @@ type PrimaryButtonProperty = {
     padding?: PrimaryButtonPadding,
     border?: PrimaryButtonBorder,
     rounded?: PrimaryButtonRounded,
-    shape?: PrimaryButtonShape
+    size?: PrimaryButtonSize
 }
 
 export default function PrimaryButton(property: PrimaryButtonProperty) {
 
-    const {children, onClickEvent, padding, border, rounded, shape} = property
+    const {children, onClickEvent, padding, border, rounded, size} = property
 
     return (
-        <button className={`${padding} ${border} ${rounded} ${shape} bg-white transition ease-in-out duration-300 hover:bg-gray-300`} onClick={onClickEvent}>
+        <button className={`${padding} ${border} ${rounded} ${size} bg-white transition ease-in-out duration-300 hover:bg-gray-300`} onClick={onClickEvent}>
             {children}
         </button>
     )

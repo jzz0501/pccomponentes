@@ -1,6 +1,6 @@
 "use client"
 
-import PrimaryButton, { PrimaryButtonBorder, PrimaryButtonRounded, PrimaryButtonShape } from "@/components/atoms/button/primary/PrimaryButton"
+import PrimaryButton, { PrimaryButtonBorder, PrimaryButtonRounded, PrimaryButtonSize } from "@/components/atoms/button/primary/PrimaryButton"
 import ProductCardSlides from "@/components/molecules/slides/product-card/ProductCardSlides"
 import ProductCardData from "@/model/ProductCard"
 import useCarousel from "@/utils/hooks/useCarousel"
@@ -28,13 +28,13 @@ export default function SingleCarousel(property: SingleCarouselProperty) {
             <ProductCardSlides id_slides={id_slides} productCards={productCards}/>
 
             <div id={id_leftButton} className="absolute left-0 top-1/2 -translate-y-1/2 max-lg:invisible">
-                <PrimaryButton onClickEvent={onClickLeftButton} shape={PrimaryButtonShape.MEDIUM_SQUARE} rounded={PrimaryButtonRounded.SMALL} border={PrimaryButtonBorder.NORMAL}>
+                <PrimaryButton onClickEvent={onClickLeftButton} shape={PrimaryButtonSize.MEDIUM_SQUARE} rounded={PrimaryButtonRounded.SMALL} border={PrimaryButtonBorder.NORMAL}>
                     &lt;
                 </PrimaryButton>
             </div>
 
             <div id={id_rightButton} className="absolute right-0 top-1/2 -translate-y-1/2 max-lg:invisible">
-                <PrimaryButton onClickEvent={onClickRightButton} shape={PrimaryButtonShape.MEDIUM_SQUARE} rounded={PrimaryButtonRounded.SMALL} border={PrimaryButtonBorder.NORMAL}>
+                <PrimaryButton onClickEvent={onClickRightButton} shape={PrimaryButtonSize.MEDIUM_SQUARE} rounded={PrimaryButtonRounded.SMALL} border={PrimaryButtonBorder.NORMAL}>
                     &gt;
                 </PrimaryButton>
             </div>

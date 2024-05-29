@@ -1,6 +1,6 @@
 "use client"
 
-import PrimaryButton, { PrimaryButtonShape } from "@/components/atoms/button/primary/PrimaryButton"
+import PrimaryButton, { PrimaryButtonSize } from "@/components/atoms/button/primary/PrimaryButton"
 
 export default function CategorySideBar() {
 
@@ -24,7 +24,7 @@ export default function CategorySideBar() {
 
     return (
         <div className="h-screen bg-white w-[400px] border-[0.5px]">
-            <PrimaryButton onClickEvent={onClickClose} shape={PrimaryButtonShape.MEDIUM_SQUARE}>
+            <PrimaryButton onClickEvent={onClickClose} shape={PrimaryButtonSize.MEDIUM_SQUARE}>
                 x
             </PrimaryButton>
         </div>
